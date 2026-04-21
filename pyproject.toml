@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redis-cache-export"
+version = "1.0.0"
+description = "A query cache and export plugin for Python web frameworks"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["redis", "cache", "export", "flask", "fastapi", "django"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "redis>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "fakeredis>=2.0.0",
+    "coverage>=6.0.0",
+]
+excel = [
+    "openpyxl>=3.0.0",
+]
+celery = [
+    "celery>=5.0.0",
+]
+flask = [
+    "flask>=2.0.0",
+]
+fastapi = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+]
+django = [
+    "django>=4.0.0",
+]
+all = [
+    "redis-cache-export[dev,excel,celery,flask,fastapi,django]",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/redis-cache-export"
+Documentation = "https://github.com/yourname/redis-cache-export#readme"
+Repository = "https://github.com/yourname/redis-cache-export"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["redis_cache_export*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["."]
+omit = ["tests/*", "examples/*"]

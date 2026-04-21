@@ -1,0 +1,24 @@
+# Core dependencies
+redis>=4.0.0
+
+# Optional dependencies for different features
+# Excel export
+# openpyxl>=3.0.0
+
+# Celery task queue
+# celery>=5.0.0
+
+# Flask example
+# flask>=2.0.0
+
+# FastAPI example
+# fastapi>=0.100.0
+# uvicorn>=0.20.0
+
+# Django example
+# django>=4.0.0
+
+# Development dependencies
+# pytest>=7.0.0
+# fakeredis>=2.0.0
+# coverage>=6.0.0
